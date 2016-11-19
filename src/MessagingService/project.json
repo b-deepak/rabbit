@@ -1,4 +1,4 @@
-﻿{
+{
   "dependencies": {
     "Microsoft.NETCore.App": {
       "version": "1.0.0",
@@ -13,7 +13,10 @@
     "Microsoft.Extensions.Logging": "1.0.0",
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
-    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0"
+    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
+    "RawRabbit": "1.10.2",
+    "RawRabbit.vNext": "1.10.2",
+    "RawRabbit.Attributes": "1.10.2"
   },
 
   "tools": {
@@ -31,7 +34,10 @@
 
   "buildOptions": {
     "emitEntryPoint": true,
-    "preserveCompilationContext": true
+    "preserveCompilationContext": true,
+    "copyToOutput": [
+      "rawrabbit.json"
+    ]
   },
 
   "runtimeOptions": {
@@ -46,7 +52,8 @@
       "Views",
       "Areas/**/Views",
       "appsettings.json",
-      "web.config"
+      "web.config",
+      "rawrabbit.json"
     ]
   },
 

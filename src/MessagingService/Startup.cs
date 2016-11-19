@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using RawRabbit.vNext;
+using RawRabbit.Configuration;
+using RawRabbit.Common;
+using RawRabbit.Attributes;
 
 namespace MessagingService
 {
@@ -29,6 +33,14 @@ namespace MessagingService
         {
             // Add framework services.
             services.AddMvc();
+
+            //services.AddRawRabbit();
+
+            services.AddRawRabbit(
+                //cfg => cfg.AddJsonFile("rawrabbit.json"),
+                null,
+                ioc => ioc.AddSingleton<IConfigurationEvaluator, AttributeConfigEvaluator>()
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
